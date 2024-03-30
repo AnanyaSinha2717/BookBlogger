@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
     -webkit-font-smoothing: antialiased;
     background: black;
     color: whitesmoke;
@@ -42,6 +42,10 @@ img {
     height: 100vh;
     position: relative;
     background: url(../images/background.jpg)no-repeat center center/cover;
+    box-shadow: 0px 0px 250px 80px rgba(0, 0, 0, 1) inset,
+        25px 0px 20px -20px rgba(0, 0, 0, 0.45) inset,
+        0px 25px 20px -20px rgba(0, 0, 0, 0.45) inset,
+        -25px 0px 20px -20px rgba(0, 0, 0, 0.45) inset;
 }
 
 .showcase-top {
@@ -66,7 +70,7 @@ img {
     transform: translate(-50%, -50%);
 }
 
-.showcase-content{
+.showcase-content {
     position: relative;
     text-align: center;
     transform: translate(0%, 60%);
@@ -92,23 +96,26 @@ img {
 
 .btn-xl {
     font-size: 1.5rem;
-    padding: 1.2rem 2.1rem;
+    padding: 1.0rem 2.1rem;
     transform: translate(93%, 0%);
 }
 
-.input-field input[type = "text"] {
+.input-field input[type="text"] {
     width: 30%;
-    padding: 1.2rem;
+    padding: 1.0rem;
     padding-right: 20px;
     outline: none;
     position: relative;
     box-sizing: border-box;
-    border: 2px solid #fff;
+    border: 1px solid #ffffff69;
     border-radius: 5px;
-    background: rgba(0, 0, 0, 0);
-    color: #fff;
+    background: rgba(0, 0, 0, 0.822);
+    color: #ffffff;
     font-size: 20px;
-    transform: translate(-29%, -98.5%);
+    transform: translate(-30%, -98.5%);
+    transition-property: top, 1rem, 1.5; /*font-size, line-height*/
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.9, 0, 0,51, 1);
 }
 
 ::-moz-placeholder {
