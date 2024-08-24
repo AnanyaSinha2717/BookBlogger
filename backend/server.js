@@ -1,7 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 
-const workoutRoutes = require('./routes/workouts')
+const blogRoutes = require('./routes/blogs')
 
 const mongoose = require('mongoose')
 
@@ -9,16 +9,14 @@ const mongoose = require('mongoose')
 const app = express()
 
 // middleware
-app.use(express.json) // checks if req has body, if it does, then passes it to database
-app.use((req, res, next) => {
-    console.log(req.path, req.method)
-    next()
-})
+app.use(express.json()) // checks if req has body, if it does, then passes it to database
+// app.use((req, res, next) => {
+//     console.log(req.path, req.method)
+//     next()
+// })
 
 // routes
-app.use('/api/workouts', workoutRoutes => {
-
-})
+app.use('/api/blogs', blogRoutes)
 
 
 // connecting to db
@@ -34,4 +32,10 @@ mongoose.connect(process.env.MONGO_URI)
         console.log(error)
     });
 
+// 404 page
+app.use((req, res, next) => {
+    res.status(404);
+    res.json({ mssg: "404" });
+    // res.render("404", { pageTitle: "404" });
+});
 
