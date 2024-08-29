@@ -3,42 +3,40 @@ const express = require('express')
 
 const router = express.Router()
 
-const Blog = require('../models/blogmodel')
+const {
+    createBlog,
+    getBlogs,
+    getBlog,
+    deleteBlog,
+    updateBlog
+} = require('../controllers/blogController')
+
+
 
 // handling request using router
-// GET one blog
-router.get('/', (req, res) => {
-    res.json({mssg: "get all blogs"})
-    // next()
-})
+// GET all blogs
+router.get('/', getBlogs)
+
+
 
 // GET one blog
-router.get('/:id', (req, res) => {
-    res.json({mssg: 'get one blog'})
-})
+router.get('/:id', getBlog)
+
+
 
 //POST one blog
-router.post('/', async (req, res) => {
-    
-    const {title, date, chapter, pageNumbers, characters, entry} = req.body
+router.post('/', createBlog)
 
-    try{
-        const blog = await Blog.create({title, date, chapter, pageNumbers, characters, entry})
-        res.status(200).json(blog)
-    }catch(error){
-        res.status(400).json({error: error.message})
-    }
 
-})
 
 // DEL blog
-router.delete('/:id', (req, res) => {
-    res.json({mssg: 'delete one blog'})
-})
+router.delete('/:id', deleteBlog)
+
+
 
 // UPDATE a blog
-router.patch('/:id', (req, res) => {
-    res.json({mssg: 'update a blog'})
-})
+router.patch('/:id', updateBlog)
+
+
 
 module.exports = router
