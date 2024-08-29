@@ -18,12 +18,12 @@ const Schema = mongoose.Schema
 // blog on a normal day
 const blogSchema = new Schema({
     title: {
-        type:String,
+        type: String,
         required: true
     },
 
     date: {
-        type:Date, default: Date.now
+        type: Date, default: Date.now
     },
 
     chapter: {
@@ -42,6 +42,6 @@ const blogSchema = new Schema({
     entry: {
         type: String
     }
-}, {timestamps: true})
+}, { timestamps: true })
 
 module.exports = mongoose.model('Blog', blogSchema)
