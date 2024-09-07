@@ -43,14 +43,17 @@ const addMember = async (req, res) => {
         return;
       }
 
-    //   console.log(files);
-    //   console.log(fields);
+      //   console.log(files);
+      //   console.log(fields);
+      try {
+        const memberName = fields.memberName[0];
+        const branch = fields.branch[0];
+        const year = fields.year[0];
+        const birthday = fields.birthday[0];
+        const image = files.image[0];
 
-      const { memberName, branch, year, birthday} = fields;
-      const {image} = files;
-
-    //   upload image
-        const uploadImage = await cloudinary.uploader.upload(image);
+        //   upload image
+        const uploadImage = await cloudinary.uploader.upload(image.filepath);
         console.log(uploadImage);
 
         const member = await Member.create({
@@ -61,7 +64,10 @@ const addMember = async (req, res) => {
           image: uploadImage.secure_url,
         });
         res.status(200).json(member);
-    //   res.status(200);
+        //   res.status(200);
+      } catch (error) {
+        res.status(400).json({ error: error.message });
+      }
     });
   } catch (error) {
     res.status(400).json({ error: error.message });
