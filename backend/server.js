@@ -2,6 +2,7 @@ require('dotenv').config()
 const express = require('express')
 
 const blogRoutes = require('./routes/blogs')
+const memberRoutes = require('./routes/members')
 
 const mongoose = require('mongoose')
 
@@ -17,6 +18,7 @@ app.use(express.json()) // checks if req has body, if it does, then passes it to
 
 // routes
 app.use('/api/blogs', blogRoutes)
+app.use('/api/members', memberRoutes)
 
 
 // connecting to db
