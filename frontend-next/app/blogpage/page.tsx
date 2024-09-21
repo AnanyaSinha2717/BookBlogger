@@ -4,7 +4,7 @@ export default function BlogPage() {
       <div className="blog-page-contents">
 
 
-        // title
+        {/* title */}
         <a>
           <label>
             <h1 className="blog-title">Title :</h1>
@@ -19,7 +19,7 @@ export default function BlogPage() {
         </a>
 
 
-        // date
+        {/* date */}
         <a>
           <h2 className="blog-date">
             Date: <input type="date" />
@@ -27,7 +27,7 @@ export default function BlogPage() {
         </a>
 
 
-        // chapter
+        {/* chapter */}
         <a>
           <h2 className="blog-chapter">
             Chapter{" "}
@@ -39,7 +39,7 @@ export default function BlogPage() {
         </a>
 
 
-        // page number
+        {/* page number */}
         <a>
           <h2 className="blog-page-number">
             Page Numbers{" "}
@@ -53,7 +53,7 @@ export default function BlogPage() {
         </a>
 
         
-        // characters
+        {/* characters */}
         <a>
           <h2 className="blog-character">Characters: </h2>
         </a>
