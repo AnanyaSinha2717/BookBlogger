@@ -10,7 +10,7 @@ export default function Home() {
         </a>
 
         <Link href="/blogpage/">
-          Write a blog!
+          <button className="btn btn-secondary w-55 rounded-full">Write a blog!</button>
         </Link>
       </div>
     </main>

@@ -1,31 +1,34 @@
 export default function BlogPage() {
   return (
-    <main className="blog-page">
+    <main className="blog-page m-10 data-theme='retro'">
       <div className="blog-page-contents">
-
-
         {/* title */}
         <a>
-          <label>
-            <h1 className="blog-title">Title :</h1>
-          </label>
-
           <strong>
-            <input
+            <textarea
               name="titleInput"
-              placeholder="this should be bold and big"
+              className="font-mono text-4xl py-1"
+              placeholder="Title"
             />
           </strong>
-        </a>
 
+          <h2>
+            <input 
+            name="authorInput"
+            className="font-serif text-sm italic"
+            placeholder="Author"
+            />
+
+            
+          </h2>
+        
 
         {/* date */}
-        <a>
-          <h2 className="blog-date">
-            Date: <input type="date" />
+        
+          <h2 className="blog-date py-1">
+            Date: <input type="date"/>
           </h2>
         </a>
-
 
         {/* chapter */}
         <a>
@@ -38,10 +41,9 @@ export default function BlogPage() {
           </h2>
         </a>
 
-
         {/* page number */}
         <a>
-          <h2 className="blog-page-number">
+          <h2 className="blog-page-number py-1">
             Page Numbers{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
@@ -52,7 +54,6 @@ export default function BlogPage() {
           </h2>
         </a>
 
-        
         {/* characters */}
         <a>
           <h2 className="blog-character">Characters: </h2>
