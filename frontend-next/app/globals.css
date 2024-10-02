@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 
-.fredoka-font-mono text-4xl py-1 {
+.fredoka-titleInput {
   font-family: "Fredoka", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
@@ -11,3 +11,4 @@
   font-variation-settings:
     "wdth" 97;
 }
+
